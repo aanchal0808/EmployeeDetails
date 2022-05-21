@@ -1,0 +1,85 @@
+<div  class="container  form-container">
+
+
+<form  class =""
+[formGroup]=employeeDetail>
+  <div class="pt-3">
+    <label for="" formControlName="Name">Name</label>
+    <input type="text" formControlName="name">
+  </div>
+<br>
+  <div>
+    <label for="">Gender</label>
+    <div>
+      <label for="type">
+        <input type="radio" formControlName="gender" name="type" value="Male">
+        Male
+      </label>
+    </div>
+    <div>
+      <label for="type">
+        <input type="radio" formControlName="gender" name="type" value="Female">
+        Female
+      </label>
+    </div>
+  </div>
+<br>
+
+  <div>
+    Select Country
+    <select name="Country" formControlName="country" id="">
+      <option value="">Select</option>
+      <option value="India">India</option>
+      <option value="USA">USA</option>
+      <option value="UK">UK</option>
+
+
+    </select>
+  </div>
+<br>
+  <div>
+    <label for="">Date Of Birth</label>
+    <input type="date" formControlName="dob" data-date-inline-picker="true">
+  </div>
+<br>
+<br>
+  <div>
+    <button (click)="onSubmit()"class = "btn btn-primary">
+      Submit
+    </button>
+  </div>
+</form>
+
+<hr>
+<hr>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th class="tableBorder">Name</th>
+        <th class="tableBorder">Gender</th>
+        <th class="tableBorder">Country</th>
+        <th class="tableBorder"> DOB</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr >
+        <td class="tableBorder" >Aanchal Soni</td>
+        <td class="tableBorder"> Female</td>
+        <td class="tableBorder">India</td>
+        <td class="tableBorder">08-08-1997</td>
+      </tr>
+      <tr *ngIf="submitted">
+        <td class="tableBorder" >{{name}}</td>
+        <td class="tableBorder"> {{gender}}</td>
+        <td class="tableBorder">{{country}}</td>
+        <td class="tableBorder">{{DOB}}</td>
+      </tr>
+    </tbody>
+
+</table>
+
+</div>
+</div>
